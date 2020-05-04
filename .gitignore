@@ -2,3 +2,5 @@ output
 summaries
 checkpoints
 *.dat
+.idea
+venv
