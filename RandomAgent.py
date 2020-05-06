@@ -7,9 +7,7 @@ import numpy as np
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--mode', choices=['train', 'test'], default='train')
     parser.add_argument('--env-name', type=str, default='BreakoutDeterministic-v4')
-    parser.add_argument('--weights', type=str, default=None)
     args = parser.parse_args()
 
     # Get the environment and extract the number of actions.
