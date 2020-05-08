@@ -6,7 +6,7 @@ import argparse
 import numpy as np
 
 def paddleCol(obs):
-    # Returns the center column of the paddle
+    # Returns the leftmost column of the paddle
     # The first few pixel columns are just the left side of the screen, so skip them
     paddleCol = 10;
     while paddleCol < 150:
@@ -22,12 +22,12 @@ def ballCol(obs):
     # if the ball cannot be found in those rows, just recenter the paddle to try to catch it later
     ballRow = 63;
     while ballRow < 188:
-        ballCol = 10
-        while ballCol < 150:
+        ballCol = 0
+        while ballCol < 159:
             pixel = obs[ballRow][ballCol][0]
             if pixel == 200:
                 #print(ballRow)
-                return ballCol
+                return ballCol+1
             ballCol+=1
         ballRow+=1
     return -1
@@ -36,9 +36,9 @@ def determineAction(paddleCol, ballCol):
     if ballCol == -1:
         return 1
     difference = paddleCol - ballCol
-    if difference < 0:
+    if difference < -7:
         return 2
-    if difference > 0:
+    if difference > 7:
         return 3
     return 1
 
