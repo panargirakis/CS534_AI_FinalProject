@@ -18,14 +18,15 @@ def paddleCol(obs):
 
 def ballCol(obs):
     # Returns the column that the ball is in
-    # The lowest bricks to start are on row 92, so check in the spaces from row 93 to 187 for the ball
+    # The lowest bricks with same color as the ball to start are on row 62, so check in the spaces from row 63 to 187 for the ball
     # if the ball cannot be found in those rows, just recenter the paddle to try to catch it later
-    ballRow = 93;
+    ballRow = 63;
     while ballRow < 188:
         ballCol = 10
         while ballCol < 150:
             pixel = obs[ballRow][ballCol][0]
-            if pixel != 0:
+            if pixel == 200:
+                #print(ballRow)
                 return ballCol
             ballCol+=1
         ballRow+=1
@@ -62,8 +63,6 @@ def main():
         # The screen is a 210x160 array of pixels with three values for Atari's RGB
         # The paddle is on rows 188-191 inclusive (initial center is 189.5)
         # The paddle starts on columns 86-101 inclusive, (initial center is 93.5)
-        # The lowest bricks to start are on row 91, so check in the spaces from row 92 to 187 for the ball
-        # if the ball cannot be found in those rows, just recenter the paddle to try to catch it later
         # and move the paddle based on its location relative to the ball by checking row 190 for where it is
         paddleCenter = paddleCol(obs)
         ballCenter = ballCol(obs)
