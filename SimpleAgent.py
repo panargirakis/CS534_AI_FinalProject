@@ -6,7 +6,7 @@ import argparse
 import numpy as np
 
 def paddleCol(obs):
-    # Returns the leftmost column of the paddle
+    # Returns the center column of the paddle
     # The first few pixel columns are just the left side of the screen, so skip them
     paddleCol = 10;
     while paddleCol < 150:
