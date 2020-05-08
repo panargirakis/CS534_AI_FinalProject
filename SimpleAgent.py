@@ -23,7 +23,7 @@ def ballCol(obs):
     ballRow = 63;
     while ballRow < 188:
         ballCol = 0
-        while ballCol < 159:
+        while ballCol < 160:
             pixel = obs[ballRow][ballCol][0]
             if pixel == 200:
                 #print(ballRow)
