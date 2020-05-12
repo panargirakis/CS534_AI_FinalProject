@@ -1,0 +1,764 @@
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/bin/python /home/panos/PycharmProjects/CS534_AI_FinalProject/dqn_atari.py
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/panos/PycharmProjects/CS534_AI_FinalProject/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+2020-05-06 02:44:54.617153: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-06 02:44:54.640947: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3193555000 Hz
+2020-05-06 02:44:54.641686: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x3d27a90 executing computations on platform Host. Devices:
+2020-05-06 02:44:54.641713: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+permute (Permute)            (None, 84, 84, 4)         0
+_________________________________________________________________
+conv2d (Conv2D)              (None, 20, 20, 32)        8224
+_________________________________________________________________
+activation (Activation)      (None, 20, 20, 32)        0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 9, 9, 64)          32832
+_________________________________________________________________
+activation_1 (Activation)    (None, 9, 9, 64)          0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 7, 7, 64)          36928
+_________________________________________________________________
+activation_2 (Activation)    (None, 7, 7, 64)          0
+_________________________________________________________________
+flatten (Flatten)            (None, 3136)              0
+_________________________________________________________________
+dense (Dense)                (None, 512)               1606144
+_________________________________________________________________
+activation_3 (Activation)    (None, 512)               0
+_________________________________________________________________
+dense_1 (Dense)              (None, 4)                 2052
+_________________________________________________________________
+activation_4 (Activation)    (None, 4)                 0
+=================================================================
+Total params: 1,686,180
+Trainable params: 1,686,180
+Non-trainable params: 0
+_________________________________________________________________
+None
+Training for 1750000 steps ...
+Interval 1 (0 steps performed)
+2020-05-06 02:44:54.992018: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1483] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+10000/10000 [==============================] - 45s 4ms/step - reward: 0.0057
+57 episodes - episode_reward: 1.000 [0.000, 4.000] - ale.lives: 2.945
+
+Interval 2 (10000 steps performed)
+10000/10000 [==============================] - 44s 4ms/step - reward: 0.0067
+54 episodes - episode_reward: 1.241 [0.000, 5.000] - ale.lives: 2.990
+
+Interval 3 (20000 steps performed)
+10000/10000 [==============================] - 43s 4ms/step - reward: 0.0051
+58 episodes - episode_reward: 0.879 [0.000, 4.000] - ale.lives: 3.016
+
+Interval 4 (30000 steps performed)
+10000/10000 [==============================] - 43s 4ms/step - reward: 0.0058
+57 episodes - episode_reward: 1.018 [0.000, 4.000] - ale.lives: 2.963
+
+Interval 5 (40000 steps performed)
+10000/10000 [==============================] - 43s 4ms/step - reward: 0.0068
+53 episodes - episode_reward: 1.245 [0.000, 5.000] - ale.lives: 3.009
+
+Interval 6 (50000 steps performed)
+10000/10000 [==============================] - 118s 12ms/step - reward: 0.0059
+57 episodes - episode_reward: 1.035 [0.000, 6.000] - loss: 0.002 - mae: 0.057 - mean_q: 0.079 - mean_eps: 0.951 - ale.lives: 2.950
+
+Interval 7 (60000 steps performed)
+10000/10000 [==============================] - 117s 12ms/step - reward: 0.0069
+54 episodes - episode_reward: 1.278 [0.000, 4.000] - loss: 0.001 - mae: 0.078 - mean_q: 0.105 - mean_eps: 0.942 - ale.lives: 2.856
+
+Interval 8 (70000 steps performed)
+10000/10000 [==============================] - 118s 12ms/step - reward: 0.0067
+57 episodes - episode_reward: 1.211 [0.000, 5.000] - loss: 0.001 - mae: 0.083 - mean_q: 0.112 - mean_eps: 0.933 - ale.lives: 3.000
+
+Interval 9 (80000 steps performed)
+10000/10000 [==============================] - 118s 12ms/step - reward: 0.0066
+55 episodes - episode_reward: 1.182 [0.000, 4.000] - loss: 0.001 - mae: 0.087 - mean_q: 0.117 - mean_eps: 0.924 - ale.lives: 2.909
+
+Interval 10 (90000 steps performed)
+10000/10000 [==============================] - 119s 12ms/step - reward: 0.0068
+55 episodes - episode_reward: 1.255 [0.000, 5.000] - loss: 0.001 - mae: 0.090 - mean_q: 0.121 - mean_eps: 0.915 - ale.lives: 2.957
+
+Interval 11 (100000 steps performed)
+10000/10000 [==============================] - 120s 12ms/step - reward: 0.0076
+52 episodes - episode_reward: 1.462 [0.000, 4.000] - loss: 0.001 - mae: 0.099 - mean_q: 0.132 - mean_eps: 0.906 - ale.lives: 2.958
+
+Interval 12 (110000 steps performed)
+10000/10000 [==============================] - 120s 12ms/step - reward: 0.0066
+55 episodes - episode_reward: 1.164 [0.000, 6.000] - loss: 0.001 - mae: 0.108 - mean_q: 0.145 - mean_eps: 0.897 - ale.lives: 2.865
+
+Interval 13 (120000 steps performed)
+10000/10000 [==============================] - 120s 12ms/step - reward: 0.0079
+52 episodes - episode_reward: 1.538 [0.000, 4.000] - loss: 0.001 - mae: 0.110 - mean_q: 0.147 - mean_eps: 0.888 - ale.lives: 2.946
+
+Interval 14 (130000 steps performed)
+10000/10000 [==============================] - 122s 12ms/step - reward: 0.0071
+55 episodes - episode_reward: 1.309 [0.000, 4.000] - loss: 0.001 - mae: 0.118 - mean_q: 0.158 - mean_eps: 0.879 - ale.lives: 2.898
+
+Interval 15 (140000 steps performed)
+10000/10000 [==============================] - 122s 12ms/step - reward: 0.0069
+54 episodes - episode_reward: 1.278 [0.000, 5.000] - loss: 0.001 - mae: 0.129 - mean_q: 0.173 - mean_eps: 0.870 - ale.lives: 2.945
+
+Interval 16 (150000 steps performed)
+10000/10000 [==============================] - 122s 12ms/step - reward: 0.0066
+55 episodes - episode_reward: 1.200 [0.000, 5.000] - loss: 0.001 - mae: 0.136 - mean_q: 0.181 - mean_eps: 0.861 - ale.lives: 2.973
+
+Interval 17 (160000 steps performed)
+10000/10000 [==============================] - 123s 12ms/step - reward: 0.0071
+54 episodes - episode_reward: 1.315 [0.000, 3.000] - loss: 0.001 - mae: 0.140 - mean_q: 0.187 - mean_eps: 0.852 - ale.lives: 2.794
+
+Interval 18 (170000 steps performed)
+10000/10000 [==============================] - 124s 12ms/step - reward: 0.0058
+58 episodes - episode_reward: 0.983 [0.000, 6.000] - loss: 0.001 - mae: 0.148 - mean_q: 0.198 - mean_eps: 0.843 - ale.lives: 2.938
+
+Interval 19 (180000 steps performed)
+10000/10000 [==============================] - 125s 13ms/step - reward: 0.0066
+56 episodes - episode_reward: 1.196 [0.000, 4.000] - loss: 0.001 - mae: 0.155 - mean_q: 0.207 - mean_eps: 0.834 - ale.lives: 2.933
+
+Interval 20 (190000 steps performed)
+10000/10000 [==============================] - 125s 13ms/step - reward: 0.0058
+57 episodes - episode_reward: 1.018 [0.000, 5.000] - loss: 0.001 - mae: 0.155 - mean_q: 0.208 - mean_eps: 0.825 - ale.lives: 2.947
+
+Interval 21 (200000 steps performed)
+10000/10000 [==============================] - 126s 13ms/step - reward: 0.0083
+50 episodes - episode_reward: 1.660 [0.000, 6.000] - loss: 0.001 - mae: 0.162 - mean_q: 0.216 - mean_eps: 0.816 - ale.lives: 2.942
+
+Interval 22 (210000 steps performed)
+10000/10000 [==============================] - 127s 13ms/step - reward: 0.0066
+56 episodes - episode_reward: 1.161 [0.000, 3.000] - loss: 0.001 - mae: 0.168 - mean_q: 0.225 - mean_eps: 0.807 - ale.lives: 2.922
+
+Interval 23 (220000 steps performed)
+10000/10000 [==============================] - 129s 13ms/step - reward: 0.0075
+52 episodes - episode_reward: 1.442 [0.000, 5.000] - loss: 0.001 - mae: 0.176 - mean_q: 0.238 - mean_eps: 0.798 - ale.lives: 2.930
+
+Interval 24 (230000 steps performed)
+10000/10000 [==============================] - 129s 13ms/step - reward: 0.0080
+50 episodes - episode_reward: 1.580 [0.000, 5.000] - loss: 0.001 - mae: 0.199 - mean_q: 0.272 - mean_eps: 0.789 - ale.lives: 2.915
+
+Interval 25 (240000 steps performed)
+10000/10000 [==============================] - 129s 13ms/step - reward: 0.0065
+56 episodes - episode_reward: 1.196 [0.000, 5.000] - loss: 0.001 - mae: 0.214 - mean_q: 0.295 - mean_eps: 0.780 - ale.lives: 3.051
+
+Interval 26 (250000 steps performed)
+10000/10000 [==============================] - 130s 13ms/step - reward: 0.0077
+52 episodes - episode_reward: 1.404 [0.000, 5.000] - loss: 0.001 - mae: 0.227 - mean_q: 0.314 - mean_eps: 0.771 - ale.lives: 2.979
+
+Interval 27 (260000 steps performed)
+10000/10000 [==============================] - 130s 13ms/step - reward: 0.0083
+50 episodes - episode_reward: 1.740 [0.000, 5.000] - loss: 0.002 - mae: 0.240 - mean_q: 0.334 - mean_eps: 0.762 - ale.lives: 2.909
+
+Interval 28 (270000 steps performed)
+10000/10000 [==============================] - 131s 13ms/step - reward: 0.0092
+49 episodes - episode_reward: 1.857 [0.000, 6.000] - loss: 0.002 - mae: 0.258 - mean_q: 0.362 - mean_eps: 0.753 - ale.lives: 3.034
+
+Interval 29 (280000 steps performed)
+10000/10000 [==============================] - 133s 13ms/step - reward: 0.0086
+49 episodes - episode_reward: 1.755 [0.000, 7.000] - loss: 0.002 - mae: 0.277 - mean_q: 0.391 - mean_eps: 0.744 - ale.lives: 2.919
+
+Interval 30 (290000 steps performed)
+10000/10000 [==============================] - 135s 13ms/step - reward: 0.0103
+45 episodes - episode_reward: 2.311 [0.000, 7.000] - loss: 0.002 - mae: 0.289 - mean_q: 0.412 - mean_eps: 0.735 - ale.lives: 3.012
+
+Interval 31 (300000 steps performed)
+10000/10000 [==============================] - 135s 14ms/step - reward: 0.0100
+45 episodes - episode_reward: 2.200 [0.000, 5.000] - loss: 0.002 - mae: 0.314 - mean_q: 0.449 - mean_eps: 0.726 - ale.lives: 3.095
+
+Interval 32 (310000 steps performed)
+10000/10000 [==============================] - 137s 14ms/step - reward: 0.0101
+43 episodes - episode_reward: 2.349 [0.000, 10.000] - loss: 0.003 - mae: 0.346 - mean_q: 0.495 - mean_eps: 0.717 - ale.lives: 3.029
+
+Interval 33 (320000 steps performed)
+10000/10000 [==============================] - 138s 14ms/step - reward: 0.0098
+45 episodes - episode_reward: 2.178 [0.000, 6.000] - loss: 0.003 - mae: 0.385 - mean_q: 0.548 - mean_eps: 0.708 - ale.lives: 2.914
+
+Interval 34 (330000 steps performed)
+10000/10000 [==============================] - 139s 14ms/step - reward: 0.0109
+42 episodes - episode_reward: 2.595 [0.000, 8.000] - loss: 0.003 - mae: 0.423 - mean_q: 0.599 - mean_eps: 0.699 - ale.lives: 3.027
+
+Interval 35 (340000 steps performed)
+10000/10000 [==============================] - 141s 14ms/step - reward: 0.0100
+43 episodes - episode_reward: 2.349 [0.000, 9.000] - loss: 0.002 - mae: 0.458 - mean_q: 0.647 - mean_eps: 0.690 - ale.lives: 2.958
+
+Interval 36 (350000 steps performed)
+10000/10000 [==============================] - 142s 14ms/step - reward: 0.0106
+41 episodes - episode_reward: 2.488 [0.000, 7.000] - loss: 0.002 - mae: 0.499 - mean_q: 0.701 - mean_eps: 0.681 - ale.lives: 2.890
+
+Interval 37 (360000 steps performed)
+10000/10000 [==============================] - 142s 14ms/step - reward: 0.0121
+41 episodes - episode_reward: 3.000 [0.000, 7.000] - loss: 0.011 - mae: 0.528 - mean_q: 0.799 - mean_eps: 0.672 - ale.lives: 3.007
+
+Interval 38 (370000 steps performed)
+10000/10000 [==============================] - 144s 14ms/step - reward: 0.0136
+37 episodes - episode_reward: 3.649 [0.000, 8.000] - loss: 0.011 - mae: 0.600 - mean_q: 0.891 - mean_eps: 0.663 - ale.lives: 2.974
+
+Interval 39 (380000 steps performed)
+10000/10000 [==============================] - 145s 14ms/step - reward: 0.0118
+41 episodes - episode_reward: 2.902 [0.000, 8.000] - loss: 0.015 - mae: 0.669 - mean_q: 0.936 - mean_eps: 0.654 - ale.lives: 2.938
+
+Interval 40 (390000 steps performed)
+10000/10000 [==============================] - 146s 15ms/step - reward: 0.0117
+41 episodes - episode_reward: 2.829 [0.000, 7.000] - loss: 0.011 - mae: 0.710 - mean_q: 0.985 - mean_eps: 0.645 - ale.lives: 3.008
+
+Interval 41 (400000 steps performed)
+10000/10000 [==============================] - 147s 15ms/step - reward: 0.0111
+38 episodes - episode_reward: 3.000 [0.000, 8.000] - loss: 0.006 - mae: 0.750 - mean_q: 1.042 - mean_eps: 0.636 - ale.lives: 3.007
+
+Interval 42 (410000 steps performed)
+10000/10000 [==============================] - 148s 15ms/step - reward: 0.0093
+43 episodes - episode_reward: 2.140 [0.000, 8.000] - loss: 0.005 - mae: 0.790 - mean_q: 1.093 - mean_eps: 0.627 - ale.lives: 2.929
+
+Interval 43 (420000 steps performed)
+10000/10000 [==============================] - 149s 15ms/step - reward: 0.0096
+43 episodes - episode_reward: 2.256 [0.000, 7.000] - loss: 0.004 - mae: 0.820 - mean_q: 1.130 - mean_eps: 0.618 - ale.lives: 3.016
+
+Interval 44 (430000 steps performed)
+10000/10000 [==============================] - 148s 15ms/step - reward: 0.0080
+45 episodes - episode_reward: 1.711 [0.000, 6.000] - loss: 0.004 - mae: 0.844 - mean_q: 1.158 - mean_eps: 0.609 - ale.lives: 2.916
+
+Interval 45 (440000 steps performed)
+10000/10000 [==============================] - 146s 15ms/step - reward: 0.0084
+44 episodes - episode_reward: 1.932 [0.000, 7.000] - loss: 0.003 - mae: 0.872 - mean_q: 1.192 - mean_eps: 0.600 - ale.lives: 2.942
+
+Interval 46 (450000 steps performed)
+10000/10000 [==============================] - 146s 15ms/step - reward: 0.0068
+51 episodes - episode_reward: 1.373 [0.000, 6.000] - loss: 0.003 - mae: 0.889 - mean_q: 1.212 - mean_eps: 0.591 - ale.lives: 2.787
+
+Interval 47 (460000 steps performed)
+10000/10000 [==============================] - 147s 15ms/step - reward: 0.0057
+52 episodes - episode_reward: 1.058 [0.000, 5.000] - loss: 0.002 - mae: 0.907 - mean_q: 1.233 - mean_eps: 0.582 - ale.lives: 2.671
+
+Interval 48 (470000 steps performed)
+10000/10000 [==============================] - 149s 15ms/step - reward: 0.0062
+52 episodes - episode_reward: 1.231 [0.000, 4.000] - loss: 0.002 - mae: 0.918 - mean_q: 1.243 - mean_eps: 0.573 - ale.lives: 2.677
+
+Interval 49 (480000 steps performed)
+10000/10000 [==============================] - 149s 15ms/step - reward: 0.0078
+48 episodes - episode_reward: 1.625 [0.000, 6.000] - loss: 0.002 - mae: 0.927 - mean_q: 1.254 - mean_eps: 0.564 - ale.lives: 2.525
+
+Interval 50 (490000 steps performed)
+10000/10000 [==============================] - 151s 15ms/step - reward: 0.0073
+49 episodes - episode_reward: 1.490 [0.000, 5.000] - loss: 0.002 - mae: 0.935 - mean_q: 1.264 - mean_eps: 0.555 - ale.lives: 2.557
+
+Interval 51 (500000 steps performed)
+10000/10000 [==============================] - 152s 15ms/step - reward: 0.0068
+49 episodes - episode_reward: 1.388 [0.000, 5.000] - loss: 0.002 - mae: 0.946 - mean_q: 1.277 - mean_eps: 0.546 - ale.lives: 2.565
+
+Interval 52 (510000 steps performed)
+10000/10000 [==============================] - 154s 15ms/step - reward: 0.0068
+50 episodes - episode_reward: 1.360 [0.000, 5.000] - loss: 0.002 - mae: 0.950 - mean_q: 1.282 - mean_eps: 0.537 - ale.lives: 2.586
+
+Interval 53 (520000 steps performed)
+10000/10000 [==============================] - 155s 16ms/step - reward: 0.0093
+45 episodes - episode_reward: 2.022 [0.000, 6.000] - loss: 0.002 - mae: 0.956 - mean_q: 1.288 - mean_eps: 0.528 - ale.lives: 2.439
+
+Interval 54 (530000 steps performed)
+10000/10000 [==============================] - 157s 16ms/step - reward: 0.0091
+45 episodes - episode_reward: 2.044 [0.000, 6.000] - loss: 0.001 - mae: 0.960 - mean_q: 1.293 - mean_eps: 0.519 - ale.lives: 2.438
+
+Interval 55 (540000 steps performed)
+10000/10000 [==============================] - 158s 16ms/step - reward: 0.0085
+46 episodes - episode_reward: 1.870 [0.000, 6.000] - loss: 0.001 - mae: 0.968 - mean_q: 1.302 - mean_eps: 0.510 - ale.lives: 2.541
+
+Interval 56 (550000 steps performed)
+10000/10000 [==============================] - 159s 16ms/step - reward: 0.0084
+46 episodes - episode_reward: 1.826 [0.000, 4.000] - loss: 0.001 - mae: 0.970 - mean_q: 1.305 - mean_eps: 0.501 - ale.lives: 2.587
+
+Interval 57 (560000 steps performed)
+10000/10000 [==============================] - 161s 16ms/step - reward: 0.0099
+43 episodes - episode_reward: 2.256 [0.000, 6.000] - loss: 0.001 - mae: 0.974 - mean_q: 1.310 - mean_eps: 0.492 - ale.lives: 2.568
+
+Interval 58 (570000 steps performed)
+10000/10000 [==============================] - 162s 16ms/step - reward: 0.0111
+42 episodes - episode_reward: 2.690 [0.000, 9.000] - loss: 0.001 - mae: 0.986 - mean_q: 1.324 - mean_eps: 0.483 - ale.lives: 2.702
+
+Interval 59 (580000 steps performed)
+10000/10000 [==============================] - 163s 16ms/step - reward: 0.0116
+42 episodes - episode_reward: 2.738 [0.000, 8.000] - loss: 0.001 - mae: 0.987 - mean_q: 1.326 - mean_eps: 0.474 - ale.lives: 2.679
+
+Interval 60 (590000 steps performed)
+10000/10000 [==============================] - 165s 16ms/step - reward: 0.0124
+40 episodes - episode_reward: 3.125 [0.000, 10.000] - loss: 0.001 - mae: 0.983 - mean_q: 1.320 - mean_eps: 0.465 - ale.lives: 2.577
+
+Interval 61 (600000 steps performed)
+10000/10000 [==============================] - 166s 17ms/step - reward: 0.0145
+36 episodes - episode_reward: 4.028 [0.000, 11.000] - loss: 0.001 - mae: 0.976 - mean_q: 1.311 - mean_eps: 0.456 - ale.lives: 2.625
+
+Interval 62 (610000 steps performed)
+10000/10000 [==============================] - 167s 17ms/step - reward: 0.0152
+35 episodes - episode_reward: 4.343 [1.000, 10.000] - loss: 0.001 - mae: 0.980 - mean_q: 1.320 - mean_eps: 0.447 - ale.lives: 2.686
+
+Interval 63 (620000 steps performed)
+10000/10000 [==============================] - 167s 17ms/step - reward: 0.0169
+31 episodes - episode_reward: 5.387 [2.000, 10.000] - loss: 0.001 - mae: 0.985 - mean_q: 1.329 - mean_eps: 0.438 - ale.lives: 2.792
+
+Interval 64 (630000 steps performed)
+10000/10000 [==============================] - 166s 17ms/step - reward: 0.0178
+27 episodes - episode_reward: 6.519 [2.000, 13.000] - loss: 0.001 - mae: 0.987 - mean_q: 1.331 - mean_eps: 0.429 - ale.lives: 2.958
+
+Interval 65 (640000 steps performed)
+10000/10000 [==============================] - 166s 17ms/step - reward: 0.0172
+27 episodes - episode_reward: 6.407 [3.000, 11.000] - loss: 0.001 - mae: 0.994 - mean_q: 1.341 - mean_eps: 0.420 - ale.lives: 3.018
+
+Interval 66 (650000 steps performed)
+10000/10000 [==============================] - 168s 17ms/step - reward: 0.0189
+23 episodes - episode_reward: 8.304 [3.000, 13.000] - loss: 0.001 - mae: 1.000 - mean_q: 1.349 - mean_eps: 0.411 - ale.lives: 2.928
+
+Interval 67 (660000 steps performed)
+10000/10000 [==============================] - 170s 17ms/step - reward: 0.0188
+25 episodes - episode_reward: 7.400 [3.000, 14.000] - loss: 0.001 - mae: 1.010 - mean_q: 1.365 - mean_eps: 0.402 - ale.lives: 2.955
+
+Interval 68 (670000 steps performed)
+10000/10000 [==============================] - 171s 17ms/step - reward: 0.0195
+22 episodes - episode_reward: 9.000 [5.000, 15.000] - loss: 0.002 - mae: 1.018 - mean_q: 1.376 - mean_eps: 0.393 - ale.lives: 3.006
+
+Interval 69 (680000 steps performed)
+10000/10000 [==============================] - 173s 17ms/step - reward: 0.0191
+22 episodes - episode_reward: 8.545 [3.000, 16.000] - loss: 0.002 - mae: 1.027 - mean_q: 1.389 - mean_eps: 0.384 - ale.lives: 3.170
+
+Interval 70 (690000 steps performed)
+10000/10000 [==============================] - 175s 17ms/step - reward: 0.0188
+22 episodes - episode_reward: 8.682 [2.000, 17.000] - loss: 0.002 - mae: 1.033 - mean_q: 1.397 - mean_eps: 0.375 - ale.lives: 2.887
+
+Interval 71 (700000 steps performed)
+10000/10000 [==============================] - 176s 18ms/step - reward: 0.0198
+20 episodes - episode_reward: 9.650 [4.000, 16.000] - loss: 0.002 - mae: 1.047 - mean_q: 1.417 - mean_eps: 0.366 - ale.lives: 3.066
+
+Interval 72 (710000 steps performed)
+10000/10000 [==============================] - 178s 18ms/step - reward: 0.0205
+21 episodes - episode_reward: 10.048 [2.000, 20.000] - loss: 0.002 - mae: 1.060 - mean_q: 1.435 - mean_eps: 0.357 - ale.lives: 3.064
+
+Interval 73 (720000 steps performed)
+10000/10000 [==============================] - 180s 18ms/step - reward: 0.0211
+18 episodes - episode_reward: 11.278 [5.000, 22.000] - loss: 0.002 - mae: 1.075 - mean_q: 1.459 - mean_eps: 0.348 - ale.lives: 2.898
+
+Interval 74 (730000 steps performed)
+10000/10000 [==============================] - 180s 18ms/step - reward: 0.0203
+20 episodes - episode_reward: 10.150 [5.000, 19.000] - loss: 0.002 - mae: 1.094 - mean_q: 1.483 - mean_eps: 0.339 - ale.lives: 3.049
+
+Interval 75 (740000 steps performed)
+10000/10000 [==============================] - 183s 18ms/step - reward: 0.0205
+18 episodes - episode_reward: 11.444 [6.000, 19.000] - loss: 0.002 - mae: 1.108 - mean_q: 1.502 - mean_eps: 0.330 - ale.lives: 3.177
+
+Interval 76 (750000 steps performed)
+10000/10000 [==============================] - 183s 18ms/step - reward: 0.0218
+19 episodes - episode_reward: 11.579 [7.000, 19.000] - loss: 0.002 - mae: 1.121 - mean_q: 1.524 - mean_eps: 0.321 - ale.lives: 3.066
+
+Interval 77 (760000 steps performed)
+10000/10000 [==============================] - 185s 18ms/step - reward: 0.0228
+16 episodes - episode_reward: 14.312 [9.000, 20.000] - loss: 0.002 - mae: 1.135 - mean_q: 1.541 - mean_eps: 0.312 - ale.lives: 3.123
+
+Interval 78 (770000 steps performed)
+10000/10000 [==============================] - 186s 19ms/step - reward: 0.0231
+16 episodes - episode_reward: 14.562 [8.000, 24.000] - loss: 0.002 - mae: 1.151 - mean_q: 1.563 - mean_eps: 0.303 - ale.lives: 3.064
+
+Interval 79 (780000 steps performed)
+10000/10000 [==============================] - 189s 19ms/step - reward: 0.0236
+16 episodes - episode_reward: 14.500 [5.000, 23.000] - loss: 0.002 - mae: 1.168 - mean_q: 1.588 - mean_eps: 0.294 - ale.lives: 2.888
+
+Interval 80 (790000 steps performed)
+10000/10000 [==============================] - 190s 19ms/step - reward: 0.0234
+16 episodes - episode_reward: 15.000 [10.000, 24.000] - loss: 0.002 - mae: 1.193 - mean_q: 1.625 - mean_eps: 0.285 - ale.lives: 3.134
+
+Interval 81 (800000 steps performed)
+10000/10000 [==============================] - 191s 19ms/step - reward: 0.0235
+16 episodes - episode_reward: 14.312 [9.000, 30.000] - loss: 0.003 - mae: 1.215 - mean_q: 1.653 - mean_eps: 0.276 - ale.lives: 3.244
+
+Interval 82 (810000 steps performed)
+10000/10000 [==============================] - 193s 19ms/step - reward: 0.0226
+16 episodes - episode_reward: 13.875 [7.000, 21.000] - loss: 0.003 - mae: 1.239 - mean_q: 1.682 - mean_eps: 0.267 - ale.lives: 3.122
+
+Interval 83 (820000 steps performed)
+10000/10000 [==============================] - 192s 19ms/step - reward: 0.0235
+16 episodes - episode_reward: 15.188 [8.000, 29.000] - loss: 0.002 - mae: 1.266 - mean_q: 1.715 - mean_eps: 0.258 - ale.lives: 2.981
+
+Interval 84 (830000 steps performed)
+10000/10000 [==============================] - 192s 19ms/step - reward: 0.0241
+13 episodes - episode_reward: 17.846 [11.000, 27.000] - loss: 0.002 - mae: 1.284 - mean_q: 1.740 - mean_eps: 0.249 - ale.lives: 3.029
+
+Interval 85 (840000 steps performed)
+10000/10000 [==============================] - 193s 19ms/step - reward: 0.0237
+16 episodes - episode_reward: 15.500 [7.000, 23.000] - loss: 0.002 - mae: 1.297 - mean_q: 1.760 - mean_eps: 0.240 - ale.lives: 2.928
+
+Interval 86 (850000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0250
+13 episodes - episode_reward: 19.000 [11.000, 27.000] - loss: 0.003 - mae: 1.308 - mean_q: 1.777 - mean_eps: 0.231 - ale.lives: 3.280
+
+Interval 87 (860000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0242
+13 episodes - episode_reward: 17.538 [12.000, 23.000] - loss: 0.003 - mae: 1.328 - mean_q: 1.799 - mean_eps: 0.222 - ale.lives: 3.002
+
+Interval 88 (870000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0239
+15 episodes - episode_reward: 16.933 [7.000, 23.000] - loss: 0.003 - mae: 1.338 - mean_q: 1.812 - mean_eps: 0.213 - ale.lives: 2.844
+
+Interval 89 (880000 steps performed)
+10000/10000 [==============================] - 200s 20ms/step - reward: 0.0235
+15 episodes - episode_reward: 15.667 [10.000, 29.000] - loss: 0.003 - mae: 1.361 - mean_q: 1.838 - mean_eps: 0.204 - ale.lives: 3.096
+
+Interval 90 (890000 steps performed)
+10000/10000 [==============================] - 202s 20ms/step - reward: 0.0233
+13 episodes - episode_reward: 17.923 [8.000, 29.000] - loss: 0.003 - mae: 1.378 - mean_q: 1.859 - mean_eps: 0.195 - ale.lives: 3.016
+
+Interval 91 (900000 steps performed)
+10000/10000 [==============================] - 204s 20ms/step - reward: 0.0245
+12 episodes - episode_reward: 20.333 [11.000, 37.000] - loss: 0.003 - mae: 1.387 - mean_q: 1.869 - mean_eps: 0.186 - ale.lives: 3.227
+
+Interval 92 (910000 steps performed)
+10000/10000 [==============================] - 205s 20ms/step - reward: 0.0242
+14 episodes - episode_reward: 16.929 [10.000, 26.000] - loss: 0.003 - mae: 1.398 - mean_q: 1.885 - mean_eps: 0.177 - ale.lives: 2.996
+
+Interval 93 (920000 steps performed)
+10000/10000 [==============================] - 207s 21ms/step - reward: 0.0257
+12 episodes - episode_reward: 20.333 [10.000, 30.000] - loss: 0.002 - mae: 1.407 - mean_q: 1.900 - mean_eps: 0.168 - ale.lives: 3.127
+
+Interval 94 (930000 steps performed)
+10000/10000 [==============================] - 209s 21ms/step - reward: 0.0252
+12 episodes - episode_reward: 21.000 [9.000, 35.000] - loss: 0.003 - mae: 1.415 - mean_q: 1.911 - mean_eps: 0.159 - ale.lives: 3.031
+
+Interval 95 (940000 steps performed)
+10000/10000 [==============================] - 207s 21ms/step - reward: 0.0232
+12 episodes - episode_reward: 21.000 [9.000, 31.000] - loss: 0.002 - mae: 1.424 - mean_q: 1.917 - mean_eps: 0.150 - ale.lives: 3.131
+
+Interval 96 (950000 steps performed)
+10000/10000 [==============================] - 206s 21ms/step - reward: 0.0254
+12 episodes - episode_reward: 20.667 [13.000, 29.000] - loss: 0.003 - mae: 1.431 - mean_q: 1.926 - mean_eps: 0.141 - ale.lives: 3.043
+
+Interval 97 (960000 steps performed)
+10000/10000 [==============================] - 203s 20ms/step - reward: 0.0248
+11 episodes - episode_reward: 22.182 [15.000, 28.000] - loss: 0.003 - mae: 1.433 - mean_q: 1.929 - mean_eps: 0.132 - ale.lives: 2.917
+
+Interval 98 (970000 steps performed)
+10000/10000 [==============================] - 205s 20ms/step - reward: 0.0239
+12 episodes - episode_reward: 19.000 [11.000, 26.000] - loss: 0.002 - mae: 1.443 - mean_q: 1.941 - mean_eps: 0.123 - ale.lives: 3.070
+
+Interval 99 (980000 steps performed)
+10000/10000 [==============================] - 207s 21ms/step - reward: 0.0251
+12 episodes - episode_reward: 21.750 [13.000, 29.000] - loss: 0.003 - mae: 1.446 - mean_q: 1.945 - mean_eps: 0.114 - ale.lives: 3.096
+
+Interval 100 (990000 steps performed)
+10000/10000 [==============================] - 210s 21ms/step - reward: 0.0239
+12 episodes - episode_reward: 19.750 [13.000, 32.000] - loss: 0.002 - mae: 1.449 - mean_q: 1.948 - mean_eps: 0.105 - ale.lives: 3.106
+
+Interval 101 (1000000 steps performed)
+10000/10000 [==============================] - 209s 21ms/step - reward: 0.0242
+12 episodes - episode_reward: 20.000 [13.000, 31.000] - loss: 0.003 - mae: 1.460 - mean_q: 1.964 - mean_eps: 0.100 - ale.lives: 2.971
+
+Interval 102 (1010000 steps performed)
+10000/10000 [==============================] - 209s 21ms/step - reward: 0.0209
+12 episodes - episode_reward: 18.583 [9.000, 25.000] - loss: 0.002 - mae: 1.468 - mean_q: 1.973 - mean_eps: 0.100 - ale.lives: 3.292
+
+Interval 103 (1020000 steps performed)
+10000/10000 [==============================] - 211s 21ms/step - reward: 0.0243
+10 episodes - episode_reward: 23.400 [15.000, 31.000] - loss: 0.002 - mae: 1.470 - mean_q: 1.977 - mean_eps: 0.100 - ale.lives: 3.086
+
+Interval 104 (1030000 steps performed)
+10000/10000 [==============================] - 210s 21ms/step - reward: 0.0219
+11 episodes - episode_reward: 19.727 [10.000, 30.000] - loss: 0.002 - mae: 1.478 - mean_q: 1.988 - mean_eps: 0.100 - ale.lives: 3.152
+
+Interval 105 (1040000 steps performed)
+10000/10000 [==============================] - 209s 21ms/step - reward: 0.0242
+11 episodes - episode_reward: 22.182 [15.000, 32.000] - loss: 0.002 - mae: 1.500 - mean_q: 2.019 - mean_eps: 0.100 - ale.lives: 3.037
+
+Interval 106 (1050000 steps performed)
+10000/10000 [==============================] - 209s 21ms/step - reward: 0.0219
+10 episodes - episode_reward: 21.200 [14.000, 30.000] - loss: 0.002 - mae: 1.506 - mean_q: 2.027 - mean_eps: 0.100 - ale.lives: 3.148
+
+Interval 107 (1060000 steps performed)
+10000/10000 [==============================] - 207s 21ms/step - reward: 0.0255
+11 episodes - episode_reward: 23.091 [14.000, 30.000] - loss: 0.003 - mae: 1.519 - mean_q: 2.045 - mean_eps: 0.100 - ale.lives: 2.994
+
+Interval 108 (1070000 steps performed)
+10000/10000 [==============================] - 209s 21ms/step - reward: 0.0258
+12 episodes - episode_reward: 21.917 [16.000, 28.000] - loss: 0.003 - mae: 1.523 - mean_q: 2.053 - mean_eps: 0.100 - ale.lives: 3.123
+
+Interval 109 (1080000 steps performed)
+10000/10000 [==============================] - 208s 21ms/step - reward: 0.0266
+11 episodes - episode_reward: 25.000 [13.000, 35.000] - loss: 0.002 - mae: 1.528 - mean_q: 2.060 - mean_eps: 0.100 - ale.lives: 2.990
+
+Interval 110 (1090000 steps performed)
+10000/10000 [==============================] - 204s 20ms/step - reward: 0.0256
+11 episodes - episode_reward: 22.455 [14.000, 30.000] - loss: 0.002 - mae: 1.535 - mean_q: 2.071 - mean_eps: 0.100 - ale.lives: 3.106
+
+Interval 111 (1100000 steps performed)
+10000/10000 [==============================] - 200s 20ms/step - reward: 0.0262
+10 episodes - episode_reward: 27.100 [15.000, 37.000] - loss: 0.003 - mae: 1.547 - mean_q: 2.088 - mean_eps: 0.100 - ale.lives: 3.169
+
+Interval 112 (1110000 steps performed)
+10000/10000 [==============================] - 200s 20ms/step - reward: 0.0262
+9 episodes - episode_reward: 26.889 [20.000, 37.000] - loss: 0.003 - mae: 1.565 - mean_q: 2.111 - mean_eps: 0.100 - ale.lives: 2.909
+
+Interval 113 (1120000 steps performed)
+10000/10000 [==============================] - 200s 20ms/step - reward: 0.0263
+9 episodes - episode_reward: 30.778 [25.000, 45.000] - loss: 0.002 - mae: 1.565 - mean_q: 2.111 - mean_eps: 0.100 - ale.lives: 3.174
+
+Interval 114 (1130000 steps performed)
+10000/10000 [==============================] - 200s 20ms/step - reward: 0.0262
+10 episodes - episode_reward: 24.900 [18.000, 33.000] - loss: 0.002 - mae: 1.580 - mean_q: 2.132 - mean_eps: 0.100 - ale.lives: 3.324
+
+Interval 115 (1140000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0267
+9 episodes - episode_reward: 30.556 [16.000, 37.000] - loss: 0.003 - mae: 1.588 - mean_q: 2.144 - mean_eps: 0.100 - ale.lives: 3.085
+
+Interval 116 (1150000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0263
+10 episodes - episode_reward: 26.200 [17.000, 39.000] - loss: 0.003 - mae: 1.600 - mean_q: 2.158 - mean_eps: 0.100 - ale.lives: 3.137
+
+Interval 117 (1160000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0269
+9 episodes - episode_reward: 31.222 [20.000, 47.000] - loss: 0.003 - mae: 1.608 - mean_q: 2.171 - mean_eps: 0.100 - ale.lives: 3.368
+
+Interval 118 (1170000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0260
+9 episodes - episode_reward: 28.000 [24.000, 35.000] - loss: 0.003 - mae: 1.619 - mean_q: 2.184 - mean_eps: 0.100 - ale.lives: 3.285
+
+Interval 119 (1180000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0254
+9 episodes - episode_reward: 28.111 [14.000, 38.000] - loss: 0.003 - mae: 1.631 - mean_q: 2.201 - mean_eps: 0.100 - ale.lives: 3.110
+
+Interval 120 (1190000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0262
+11 episodes - episode_reward: 24.091 [17.000, 38.000] - loss: 0.003 - mae: 1.634 - mean_q: 2.206 - mean_eps: 0.100 - ale.lives: 3.232
+
+Interval 121 (1200000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0266
+11 episodes - episode_reward: 23.727 [17.000, 33.000] - loss: 0.003 - mae: 1.652 - mean_q: 2.228 - mean_eps: 0.100 - ale.lives: 3.305
+
+Interval 122 (1210000 steps performed)
+10000/10000 [==============================] - 198s 20ms/step - reward: 0.0263
+10 episodes - episode_reward: 27.200 [17.000, 37.000] - loss: 0.003 - mae: 1.664 - mean_q: 2.244 - mean_eps: 0.100 - ale.lives: 3.049
+
+Interval 123 (1220000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0268
+9 episodes - episode_reward: 27.222 [18.000, 33.000] - loss: 0.003 - mae: 1.672 - mean_q: 2.254 - mean_eps: 0.100 - ale.lives: 3.220
+
+Interval 124 (1230000 steps performed)
+10000/10000 [==============================] - 198s 20ms/step - reward: 0.0269
+10 episodes - episode_reward: 29.100 [21.000, 38.000] - loss: 0.003 - mae: 1.682 - mean_q: 2.269 - mean_eps: 0.100 - ale.lives: 3.429
+
+Interval 125 (1240000 steps performed)
+10000/10000 [==============================] - 199s 20ms/step - reward: 0.0263
+9 episodes - episode_reward: 28.444 [14.000, 40.000] - loss: 0.003 - mae: 1.702 - mean_q: 2.292 - mean_eps: 0.100 - ale.lives: 3.401
+
+Interval 126 (1250000 steps performed)
+10000/10000 [==============================] - 197s 20ms/step - reward: 0.0268
+10 episodes - episode_reward: 26.800 [16.000, 35.000] - loss: 0.003 - mae: 1.719 - mean_q: 2.315 - mean_eps: 0.100 - ale.lives: 3.324
+
+Interval 127 (1260000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0266
+11 episodes - episode_reward: 24.000 [14.000, 36.000] - loss: 0.003 - mae: 1.731 - mean_q: 2.330 - mean_eps: 0.100 - ale.lives: 3.297
+
+Interval 128 (1270000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0260
+10 episodes - episode_reward: 25.400 [19.000, 33.000] - loss: 0.002 - mae: 1.732 - mean_q: 2.330 - mean_eps: 0.100 - ale.lives: 3.258
+
+Interval 129 (1280000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0242
+9 episodes - episode_reward: 27.889 [15.000, 37.000] - loss: 0.003 - mae: 1.738 - mean_q: 2.338 - mean_eps: 0.100 - ale.lives: 3.353
+
+Interval 130 (1290000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0238
+9 episodes - episode_reward: 27.444 [20.000, 36.000] - loss: 0.003 - mae: 1.749 - mean_q: 2.353 - mean_eps: 0.100 - ale.lives: 3.495
+
+Interval 131 (1300000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0259
+11 episodes - episode_reward: 23.091 [15.000, 33.000] - loss: 0.002 - mae: 1.757 - mean_q: 2.363 - mean_eps: 0.100 - ale.lives: 3.275
+
+Interval 132 (1310000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0262
+10 episodes - episode_reward: 25.600 [16.000, 36.000] - loss: 0.002 - mae: 1.759 - mean_q: 2.366 - mean_eps: 0.100 - ale.lives: 3.202
+
+Interval 133 (1320000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0267
+9 episodes - episode_reward: 29.667 [19.000, 43.000] - loss: 0.002 - mae: 1.766 - mean_q: 2.375 - mean_eps: 0.100 - ale.lives: 3.580
+
+Interval 134 (1330000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0273
+10 episodes - episode_reward: 27.600 [20.000, 37.000] - loss: 0.003 - mae: 1.774 - mean_q: 2.386 - mean_eps: 0.100 - ale.lives: 3.237
+
+Interval 135 (1340000 steps performed)
+10000/10000 [==============================] - 197s 20ms/step - reward: 0.0264
+9 episodes - episode_reward: 27.778 [16.000, 37.000] - loss: 0.003 - mae: 1.779 - mean_q: 2.393 - mean_eps: 0.100 - ale.lives: 3.318
+
+Interval 136 (1350000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0263
+10 episodes - episode_reward: 28.600 [23.000, 36.000] - loss: 0.002 - mae: 1.786 - mean_q: 2.401 - mean_eps: 0.100 - ale.lives: 3.214
+
+Interval 137 (1360000 steps performed)
+10000/10000 [==============================] - 195s 20ms/step - reward: 0.0254
+8 episodes - episode_reward: 28.125 [21.000, 36.000] - loss: 0.002 - mae: 1.794 - mean_q: 2.413 - mean_eps: 0.100 - ale.lives: 3.390
+
+Interval 138 (1370000 steps performed)
+10000/10000 [==============================] - 195s 20ms/step - reward: 0.0254
+10 episodes - episode_reward: 26.900 [8.000, 43.000] - loss: 0.002 - mae: 1.802 - mean_q: 2.421 - mean_eps: 0.100 - ale.lives: 3.268
+
+Interval 139 (1380000 steps performed)
+10000/10000 [==============================] - 195s 20ms/step - reward: 0.0262
+11 episodes - episode_reward: 24.818 [15.000, 34.000] - loss: 0.002 - mae: 1.814 - mean_q: 2.437 - mean_eps: 0.100 - ale.lives: 3.139
+
+Interval 140 (1390000 steps performed)
+10000/10000 [==============================] - 195s 20ms/step - reward: 0.0249
+9 episodes - episode_reward: 27.222 [19.000, 35.000] - loss: 0.002 - mae: 1.818 - mean_q: 2.441 - mean_eps: 0.100 - ale.lives: 3.272
+
+Interval 141 (1400000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0269
+9 episodes - episode_reward: 29.000 [23.000, 35.000] - loss: 0.002 - mae: 1.824 - mean_q: 2.450 - mean_eps: 0.100 - ale.lives: 3.066
+
+Interval 142 (1410000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0260
+10 episodes - episode_reward: 26.700 [19.000, 34.000] - loss: 0.002 - mae: 1.834 - mean_q: 2.462 - mean_eps: 0.100 - ale.lives: 2.937
+
+Interval 143 (1420000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0263
+10 episodes - episode_reward: 27.300 [20.000, 38.000] - loss: 0.002 - mae: 1.841 - mean_q: 2.471 - mean_eps: 0.100 - ale.lives: 3.273
+
+Interval 144 (1430000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0267
+10 episodes - episode_reward: 25.900 [12.000, 40.000] - loss: 0.002 - mae: 1.858 - mean_q: 2.495 - mean_eps: 0.100 - ale.lives: 3.077
+
+Interval 145 (1440000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0267
+10 episodes - episode_reward: 26.100 [18.000, 37.000] - loss: 0.002 - mae: 1.867 - mean_q: 2.505 - mean_eps: 0.100 - ale.lives: 3.223
+
+Interval 146 (1450000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0267
+9 episodes - episode_reward: 28.556 [23.000, 40.000] - loss: 0.002 - mae: 1.877 - mean_q: 2.522 - mean_eps: 0.100 - ale.lives: 3.247
+
+Interval 147 (1460000 steps performed)
+10000/10000 [==============================] - 193s 19ms/step - reward: 0.0262
+10 episodes - episode_reward: 26.800 [15.000, 35.000] - loss: 0.002 - mae: 1.885 - mean_q: 2.532 - mean_eps: 0.100 - ale.lives: 3.108
+
+Interval 148 (1470000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0268
+10 episodes - episode_reward: 28.800 [15.000, 37.000] - loss: 0.002 - mae: 1.892 - mean_q: 2.541 - mean_eps: 0.100 - ale.lives: 3.319
+
+Interval 149 (1480000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0274
+10 episodes - episode_reward: 26.700 [16.000, 38.000] - loss: 0.002 - mae: 1.901 - mean_q: 2.554 - mean_eps: 0.100 - ale.lives: 3.623
+
+Interval 150 (1490000 steps performed)
+10000/10000 [==============================] - 193s 19ms/step - reward: 0.0262
+8 episodes - episode_reward: 32.625 [18.000, 43.000] - loss: 0.003 - mae: 1.908 - mean_q: 2.563 - mean_eps: 0.100 - ale.lives: 3.276
+
+Interval 151 (1500000 steps performed)
+10000/10000 [==============================] - 193s 19ms/step - reward: 0.0271
+9 episodes - episode_reward: 29.111 [19.000, 38.000] - loss: 0.003 - mae: 1.916 - mean_q: 2.574 - mean_eps: 0.100 - ale.lives: 2.948
+
+Interval 152 (1510000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0264
+8 episodes - episode_reward: 31.750 [22.000, 37.000] - loss: 0.002 - mae: 1.928 - mean_q: 2.589 - mean_eps: 0.100 - ale.lives: 2.952
+
+Interval 153 (1520000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0273
+10 episodes - episode_reward: 27.800 [18.000, 36.000] - loss: 0.003 - mae: 1.936 - mean_q: 2.599 - mean_eps: 0.100 - ale.lives: 3.494
+
+Interval 154 (1530000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0255
+11 episodes - episode_reward: 25.182 [18.000, 37.000] - loss: 0.003 - mae: 1.942 - mean_q: 2.609 - mean_eps: 0.100 - ale.lives: 3.074
+
+Interval 155 (1540000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0266
+8 episodes - episode_reward: 32.500 [18.000, 44.000] - loss: 0.002 - mae: 1.958 - mean_q: 2.629 - mean_eps: 0.100 - ale.lives: 3.606
+
+Interval 156 (1550000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0280
+8 episodes - episode_reward: 32.750 [22.000, 48.000] - loss: 0.002 - mae: 1.964 - mean_q: 2.638 - mean_eps: 0.100 - ale.lives: 3.252
+
+Interval 157 (1560000 steps performed)
+10000/10000 [==============================] - 193s 19ms/step - reward: 0.0267
+10 episodes - episode_reward: 28.500 [15.000, 39.000] - loss: 0.002 - mae: 1.968 - mean_q: 2.644 - mean_eps: 0.100 - ale.lives: 3.164
+
+Interval 158 (1570000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0270
+8 episodes - episode_reward: 30.125 [24.000, 40.000] - loss: 0.002 - mae: 1.982 - mean_q: 2.662 - mean_eps: 0.100 - ale.lives: 2.962
+
+Interval 159 (1580000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0273
+9 episodes - episode_reward: 31.556 [22.000, 46.000] - loss: 0.002 - mae: 1.988 - mean_q: 2.668 - mean_eps: 0.100 - ale.lives: 3.106
+
+Interval 160 (1590000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0273
+9 episodes - episode_reward: 29.889 [18.000, 40.000] - loss: 0.002 - mae: 1.999 - mean_q: 2.684 - mean_eps: 0.100 - ale.lives: 3.253
+
+Interval 161 (1600000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0270
+10 episodes - episode_reward: 29.100 [16.000, 41.000] - loss: 0.002 - mae: 2.005 - mean_q: 2.692 - mean_eps: 0.100 - ale.lives: 3.100
+
+Interval 162 (1610000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0276
+8 episodes - episode_reward: 32.625 [21.000, 44.000] - loss: 0.002 - mae: 2.013 - mean_q: 2.703 - mean_eps: 0.100 - ale.lives: 3.337
+
+Interval 163 (1620000 steps performed)
+10000/10000 [==============================] - 194s 19ms/step - reward: 0.0274
+8 episodes - episode_reward: 34.250 [27.000, 41.000] - loss: 0.003 - mae: 2.020 - mean_q: 2.715 - mean_eps: 0.100 - ale.lives: 3.192
+
+Interval 164 (1630000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0273
+8 episodes - episode_reward: 33.375 [24.000, 44.000] - loss: 0.003 - mae: 2.032 - mean_q: 2.729 - mean_eps: 0.100 - ale.lives: 3.325
+
+Interval 165 (1640000 steps performed)
+10000/10000 [==============================] - 195s 20ms/step - reward: 0.0273
+10 episodes - episode_reward: 29.200 [21.000, 37.000] - loss: 0.002 - mae: 2.038 - mean_q: 2.735 - mean_eps: 0.100 - ale.lives: 3.451
+
+Interval 166 (1650000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0274
+8 episodes - episode_reward: 35.250 [27.000, 51.000] - loss: 0.002 - mae: 2.043 - mean_q: 2.742 - mean_eps: 0.100 - ale.lives: 3.322
+
+Interval 167 (1660000 steps performed)
+10000/10000 [==============================] - 195s 19ms/step - reward: 0.0278
+9 episodes - episode_reward: 31.000 [19.000, 39.000] - loss: 0.002 - mae: 2.041 - mean_q: 2.740 - mean_eps: 0.100 - ale.lives: 3.413
+
+Interval 168 (1670000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0275
+9 episodes - episode_reward: 30.000 [11.000, 45.000] - loss: 0.002 - mae: 2.061 - mean_q: 2.767 - mean_eps: 0.100 - ale.lives: 3.292
+
+Interval 169 (1680000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0282
+8 episodes - episode_reward: 33.250 [20.000, 41.000] - loss: 0.002 - mae: 2.058 - mean_q: 2.763 - mean_eps: 0.100 - ale.lives: 2.998
+
+Interval 170 (1690000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0274
+9 episodes - episode_reward: 30.444 [15.000, 40.000] - loss: 0.003 - mae: 2.067 - mean_q: 2.774 - mean_eps: 0.100 - ale.lives: 3.376
+
+Interval 171 (1700000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0284
+8 episodes - episode_reward: 35.625 [28.000, 41.000] - loss: 0.002 - mae: 2.078 - mean_q: 2.791 - mean_eps: 0.100 - ale.lives: 3.421
+
+Interval 172 (1710000 steps performed)
+10000/10000 [==============================] - 196s 20ms/step - reward: 0.0281
+8 episodes - episode_reward: 34.625 [23.000, 49.000] - loss: 0.003 - mae: 2.082 - mean_q: 2.796 - mean_eps: 0.100 - ale.lives: 3.197
+
+Interval 173 (1720000 steps performed)
+10000/10000 [==============================] - 197s 20ms/step - reward: 0.0265
+9 episodes - episode_reward: 30.556 [17.000, 37.000] - loss: 0.002 - mae: 2.085 - mean_q: 2.801 - mean_eps: 0.100 - ale.lives: 3.229
+
+Interval 174 (1730000 steps performed)
+10000/10000 [==============================] - 197s 20ms/step - reward: 0.0278
+8 episodes - episode_reward: 32.750 [16.000, 43.000] - loss: 0.002 - mae: 2.099 - mean_q: 2.818 - mean_eps: 0.100 - ale.lives: 3.460
+
+Interval 175 (1740000 steps performed)
+10000/10000 [==============================] - 201s 20ms/step - reward: 0.0282
+done, took 30165.486 seconds
+Testing for 10 episodes ...
+Episode 1: reward: 28.000, steps: 1060
+Episode 2: reward: 28.000, steps: 1059
+Episode 3: reward: 28.000, steps: 1059
+Episode 4: reward: 28.000, steps: 1059
+Episode 5: reward: 28.000, steps: 1059
+Episode 6: reward: 28.000, steps: 1059
+Episode 7: reward: 28.000, steps: 1059
+Episode 8: reward: 28.000, steps: 1059
+Episode 9: reward: 28.000, steps: 1059
+Episode 10: reward: 28.000, steps: 1059
+
+Process finished with exit code 0
