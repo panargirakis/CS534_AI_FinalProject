@@ -59,10 +59,14 @@ for model_name, model_path in models:
         fig.write_image("{}/{}_rwd_dur.png".format(viz_folder, model_name))
     else:
         fig.show()
+        # pass
 
     fig.data = []
     fig.update_layout(title="Loss vs. Episode - {}".format(model_name), yaxis=dict(title="Loss", dtick=None))
 
+    fig.add_trace(go.Scatter(x=df["episode"], y=df["loss"],
+                             mode='lines',
+                             name='Loss'))
     fig.add_trace(go.Scatter(x=df["episode"], y=df["loss"].rolling(100).mean(),
                              mode='lines',
                              name='Loss (Smoothed)'))
