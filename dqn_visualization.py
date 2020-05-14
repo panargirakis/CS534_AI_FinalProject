@@ -36,7 +36,7 @@ for model_name, model_path in models:
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=df["episode"], y=df["episode_reward"],
                              mode='lines',
-                             name='Episide Reward'))
+                             name='Episode Reward'))
     fig.add_trace(go.Scatter(x=df["episode"], y=df["episode_reward"].rolling(100).mean(),
                              mode='lines',
                              name='Ep. Reward (Smoothed)'))
