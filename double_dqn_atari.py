@@ -116,4 +116,5 @@ elif args.mode == 'test':
     if args.weights:
         weights_filename = args.weights
     dqn.load_weights(weights_filename)
+    env = gym.wrappers.Monitor(env, "./vid_double", video_callable=lambda episode_id: True, force=True)
     dqn.test(env, nb_episodes=10, visualize=True)

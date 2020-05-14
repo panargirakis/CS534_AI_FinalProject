@@ -5,3 +5,7 @@ checkpoints
 .idea
 venv
 final_models
+vid_double
+vid_double_dueling
+vid_dueling
+vid_standard

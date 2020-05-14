@@ -9,6 +9,11 @@ from rl.agents.dqn import DQNAgent
 from rl.policy import BoltzmannQPolicy
 from rl.memory import SequentialMemory
 
+# from nes_py.wrappers import JoypadSpace
+# import gym_super_mario_bros
+# from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
+# # env = gym_super_mario_bros.make('SuperMarioBros-v0')
+
 from tensorflow.python.framework.ops import disable_eager_execution
 disable_eager_execution()
 
